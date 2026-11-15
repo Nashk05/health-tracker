@@ -15,21 +15,15 @@ jobs:
           distribution: temurin
           java-version: 21
       - uses: android-actions/setup-android@v3
-      - name: Create the app project
+      - name: Build
         run: |
-          mkdir www
-          cp index.html www/index.html
-          npm init -y
-          npm install @capacitor/core @capacitor/android
-          npm install -D @capacitor/cli
-          npx cap telemetry off || true
-          npx cap init "Health Tracker" com.healthtracker.app --web-dir www
-          npx cap add android
-          npx cap sync
-          chmod +x android/gradlew
-      - name: Build the APK
-        run: cd android && ./gradlew assembleDebug
+          ZIP=$(ls -1 files*.zip | tail -n 1)
+          test -n "$ZIP" || { echo "No files zip in the repo. Upload files.zip first."; exit 1; }
+          echo "Using $ZIP"
+          unzip -o "$ZIP" -d app
+          cd app
+          bash build.sh
       - uses: actions/upload-artifact@v4
         with:
           name: health-tracker-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: app/android/app/build/outputs/apk/debug/app-debug.apk
