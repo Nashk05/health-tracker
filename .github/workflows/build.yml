@@ -15,14 +15,24 @@ jobs:
           distribution: temurin
           java-version: 21
       - uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
       - name: Build
         run: |
+          set -o pipefail
           ZIP=$(ls -1 files*.zip | tail -n 1)
           test -n "$ZIP" || { echo "No files zip in the repo. Upload files.zip first."; exit 1; }
           echo "Using $ZIP"
           unzip -o "$ZIP" -d app
           cd app
-          bash build.sh
+          bash build.sh 2>&1 | tee "$GITHUB_WORKSPACE/build.log"
+      - name: Show the error
+        if: failure()
+        run: |
+          echo "### Build failed. Last lines of the log" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          grep -v '^$' build.log | tail -n 40 >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with:
           name: health-tracker-apk
