@@ -171,14 +171,91 @@ input,select { border-radius:13px; border-color:#efd8e2; }
 #stepTicker b { color:#a84470; font-variant-numeric:tabular-nums; }
 #stepTicker small { color:#8a7180; }
 
+
+/* Bloom Wellness scrapbook redesign */
+:root { --bg:#fff7fa; --field:#fffdfd; --ink:#51404c; --muted:#967f8e; --rule:#f2dce7; --track:#f8e5ed; --accent:#c65b88; --accent-ink:#fff; --over:#b44b68; color-scheme:light; }
+body { background:radial-gradient(circle at 8% 7%,rgba(255,214,229,.72),transparent 25%),radial-gradient(circle at 94% 22%,rgba(229,218,255,.65),transparent 24%),linear-gradient(160deg,#fff7fa 0%,#fbf7ff 52%,#f5fbf5 100%); }
+.wrap { max-width:560px; padding:18px 16px 46px; }
+.welcome-hero { position:relative; overflow:hidden; padding:19px 20px 16px; border:1px solid #f1d5e2; border-radius:28px; background:linear-gradient(135deg,#fff 0%,#fff0f5 58%,#f2edff 100%); box-shadow:0 14px 34px rgba(174,104,139,.12); }
+.welcome-hero::before,.welcome-hero::after { content:""; position:absolute; border-radius:50%; pointer-events:none; }
+.welcome-hero::before { width:150px;height:150px;right:-48px;top:55px;background:rgba(255,255,255,.42); }
+.welcome-hero::after { width:90px;height:90px;right:72px;bottom:-58px;background:rgba(255,255,255,.48); }
+.hero-top { display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1; }
+.floral-mark { margin:0;color:#a64d78;font-size:12px;letter-spacing:.13em; }
+.floral-mark span { font-size:24px; }
+.hero-sparkle { color:#c58aae;font-size:25px; }
+.hero-copy { position:relative;z-index:1;max-width:82%;padding-top:23px; }
+.eyebrow { margin:0 0 7px;color:#b07898;font-size:10px;font-weight:700;letter-spacing:.16em; }
+.welcome-hero h1 { color:#914b70;font-size:34px;line-height:1.08;letter-spacing:-.035em; }
+.hero-sub { margin:9px 0 10px;color:#846d7b;font-size:14px;line-height:1.45; }
+.welcome-hero .date { margin:0;color:#a18596;font-size:12px; }
+.hero-stickers { position:absolute;right:12px;top:82px;width:120px;height:145px;z-index:1; }
+.sticker { position:absolute;display:grid;place-items:center;filter:drop-shadow(0 5px 5px rgba(130,83,113,.13)); }
+.sticker.flower { right:14px;top:0;font-size:47px;transform:rotate(12deg); }
+.sticker.butterfly { right:70px;top:52px;font-size:28px;transform:rotate(-17deg); }
+.sticker.bow { right:4px;top:88px;font-size:34px;transform:rotate(12deg); }
+.sticker.sparkle { right:83px;top:111px;font-size:20px; }
+.hero-note { position:relative;z-index:1;display:flex;align-items:center;gap:9px;margin-top:20px;padding:10px 12px;border:1px dashed #e9bfd1;border-radius:15px;background:rgba(255,255,255,.62);color:#946d82;font-size:12px; }
+.hero-note span:first-child { font-size:18px; }
+.dashboard-label { display:flex;justify-content:space-between;align-items:center;margin:21px 3px 10px;color:#a47a91;font-size:10px;font-weight:700;letter-spacing:.15em; }
+.mini-cards { display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:13px; }
+.mini-card { position:relative;min-height:112px;overflow:hidden;padding:13px 14px;border:1px solid #f0dce6;border-radius:20px;background:rgba(255,255,255,.84);box-shadow:0 7px 20px rgba(160,112,139,.07); }
+.mini-card:first-child { background:linear-gradient(145deg,#fff 0%,#fff0f4 100%); }
+.mini-card:nth-child(2) { background:linear-gradient(145deg,#fff 0%,#f0f4ff 100%); }
+.mini-card:nth-child(3) { grid-column:1/-1;min-height:78px;background:linear-gradient(110deg,#fff 0%,#f3f8ee 100%); }
+.mini-label { display:block;color:#987b8c;font-size:11px;font-weight:600; }
+.mini-card strong { display:block;margin-top:4px;color:#8f4c70;font-family:Fraunces,Georgia,serif;font-size:27px;line-height:1.15; }
+.mini-card small { display:block;color:#a18a99;font-size:10px; }
+.mini-sticker { position:absolute;right:12px;top:10px;font-size:25px;filter:drop-shadow(0 3px 3px rgba(140,90,120,.12)); }
+.care-mini strong { font-family:inherit;font-size:17px; }
+#stepTicker { position:relative;top:auto;display:flex;align-items:center;justify-content:space-between;margin:0 0 16px;padding:11px 15px;border:1px solid #dce9d9;border-radius:17px;background:linear-gradient(100deg,#f5faef,#fff);box-shadow:0 6px 18px rgba(110,147,102,.08);backdrop-filter:none; }
+#stepTicker small { color:#819579;letter-spacing:.04em;font-size:10px; }
+#stepTicker b { color:#65875f;font-size:15px; }
+.ticker-flower { font-size:24px; }
+section { background:rgba(255,255,255,.91);border:1px solid #f0dce6;border-radius:23px;padding:17px;box-shadow:0 8px 24px rgba(164,111,139,.075); }
+section.block { margin-top:13px;padding:17px;border:1px solid #f0dce6;border-radius:23px;background:rgba(255,255,255,.78);box-shadow:0 7px 20px rgba(164,111,139,.055); }
+section h2 { color:#965778;font-family:Fraunces,Georgia,serif;font-size:19px; }
+.block h2::before { content:"✿  ";color:#d38aaa;font-family:system-ui;font-size:15px; }
+.total { color:#a34f79;font-size:64px; }
+.bar { height:10px;background:#f7e6ed;border-radius:99px; }
+.fill { background:linear-gradient(90deg,#e68eae,#b69be8); }
+.tabs { gap:7px;padding:5px 1px 10px;margin-bottom:13px; }
+.tab { border-radius:999px;background:rgba(255,255,255,.78);border:1px solid #efd8e4;color:#987b8e;padding:9px 13px;font-size:13px; }
+.tab[aria-selected="true"] { background:linear-gradient(120deg,#d56f98,#b28bd3);border-color:transparent;color:#fff;box-shadow:0 5px 12px rgba(188,113,157,.2); }
+button { border-radius:15px;background:linear-gradient(120deg,#cf6f98,#b58ed2);box-shadow:0 5px 12px rgba(186,113,155,.13); }
+button.alt { background:#fff;color:#a35e82;border:1px solid #e9c7d8;box-shadow:none; }
+input,select { border-radius:14px;border-color:#ecd5e1;background:#fffdfd; }
+.item,.mrow,.rrow,.prow { border-color:#f2e4eb; }
+.plan { background:#f9eaf1;border-radius:14px;color:#8e5575; }
+.alert { background:#fff0f5;color:#995d7d;border:1px solid #f2d7e4; }
+.stat3 div { border-radius:15px;border-color:#f0dce6;background:#fffafd; }
+.cal button { border-radius:11px; }
+.res { border-radius:15px;border-color:#f0dce6; }
+.foot { padding:12px;color:#a28c9b; }
+@media (max-width:380px) { .hero-copy{max-width:78%;}.welcome-hero h1{font-size:29px}.hero-stickers{right:2px;transform:scale(.88);transform-origin:top right}.mini-card{padding:12px}.mini-card strong{font-size:24px} }
+
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="floral-mark"><span>🌸</span> BLOOM WELLNESS</div>
-  <div id="stepTicker"><div><small> TODAY'S STEPS</small><br><b id="tickerSteps">0 steps</b></div><span>🌿</span></div>
-  <h1>Health tracker</h1>
-  <p class="date" id="date"></p>
+  <header class="welcome-hero">
+    <div class="hero-top"><div class="floral-mark"><span>🌸</span> BLOOM WELLNESS</div><span class="hero-sparkle" aria-hidden="true">✦</span></div>
+    <div class="hero-copy">
+      <p class="eyebrow">A LITTLE MOMENT FOR YOU</p>
+      <h1 id="greeting">Hello, sunshine!</h1>
+      <p class="hero-sub">Take a breath, take it gently. You're growing at your own pace. 🌷</p>
+      <p class="date" id="date"></p>
+    </div>
+    <div class="hero-stickers" aria-hidden="true"><span class="sticker flower">🌼</span><span class="sticker butterfly">🦋</span><span class="sticker bow">🎀</span><span class="sticker sparkle">✨</span></div>
+    <div class="hero-note"><span>💗</span><span>Small steps still count. Be proud of yourself today.</span></div>
+  </header>
+  <div class="dashboard-label"><span>YOUR LITTLE CHECK-IN</span><span>🌱</span></div>
+  <div class="mini-cards">
+    <article class="mini-card calorie-mini"><span class="mini-sticker">🍓</span><span class="mini-label">Calories today</span><strong id="dashCalories">0</strong><small>kcal logged</small></article>
+    <article class="mini-card steps-mini"><span class="mini-sticker">👟</span><span class="mini-label">Movement</span><strong id="dashSteps">0</strong><small>steps today</small></article>
+    <article class="mini-card care-mini"><span class="mini-sticker">🫧</span><span class="mini-label">A gentle reminder</span><strong>Drink water</strong><small>and give yourself a little love</small></article>
+  </div>
+  <div id="stepTicker"><div><small>🌿 YOUR DAILY STEPS</small><br><b id="tickerSteps">0 steps</b></div><span class="ticker-flower">🌸</span></div>
   <div class="tabs" role="tablist">
     <button type="button" class="tab" id="tCal" role="tab" aria-selected="true">Calories</button>
     <button type="button" class="tab" id="tDiet" role="tab" aria-selected="false">Diet chart</button>
@@ -422,7 +499,10 @@ function render() {
   const entries = state.log[dayKey()] || [];
   const total = sum(entries);
   const left = state.goal - total;
-  $("date").textContent = new Date().toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+  const now = new Date(), hourNow = now.getHours();
+  $("date").textContent = now.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+  $("greeting").textContent = hourNow < 12 ? "Good morning, sunshine!" : hourNow < 17 ? "Hello, lovely!" : "Good evening, lovely!";
+  $("dashCalories").textContent = total.toLocaleString();
   $("total").textContent = total.toLocaleString();
   $("status").textContent = "kcal eaten · " + (left >= 0 ? left.toLocaleString() + " left" : (-left).toLocaleString() + " over");
   $("fill").style.width = Math.min(100, (total / state.goal) * 100) + "%";
@@ -800,6 +880,7 @@ function stepStreak() {
 function renderSteps() {
   const t = iso(new Date()), n = state.steps[t] || 0, goal = state.stepGoal;
   const ticker = $("tickerSteps"); if (ticker) ticker.textContent = n.toLocaleString() + " steps";
+  const dashSteps = $("dashSteps"); if (dashSteps) dashSteps.textContent = n.toLocaleString();
   $("stN").textContent = n.toLocaleString();
   $("stSub").textContent = n >= goal ? "Goal reached. Well done!" : (goal - n).toLocaleString() + " steps to your goal of " + goal.toLocaleString();
   $("stFill").style.width = Math.min(100, (n / goal) * 100) + "%";
@@ -961,6 +1042,7 @@ $("bkIn").onchange = async () => {
 
 document.addEventListener("visibilitychange", render);
 render();
+renderSteps();
 </script>
 </body>
 </html>
