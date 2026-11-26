@@ -1,0 +1,127 @@
+/* Bloom Wellness: vintage botanical diary theme. Loads after the inline base styles in index.html.
+   Decoration is soft and pastel (rose, mauve, sage, lavender). Everything functional uses the dark tokens. */
+:root{
+  --bg:#F1E4CC; --paper:#FFFAF0; --field:#FFFDF7; --ink:#33202B; --muted:#664456;
+  --rule:#D8C4A3; --track:#E6D5B8; --tan:#C9B38E; --edge:#8A6A72;
+  --accent:#7A2240; --accent-ink:#FFFDF7; --over:#A11F3B; --plum:#4A2447; --sage:#3D5B47;
+  --rose:#D99AAE; --mauve:#A98497; --lav:#CBBFE0; --sage-l:#9DB09A;
+  --serif:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --hand:"Caveat","Bradley Hand","Segoe Print",cursive;
+  color-scheme:light;
+}
+html{background:var(--bg);overflow-x:hidden}
+body{overflow-x:hidden;color:var(--ink);background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .32 0 0 0 0 .2 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{max-width:560px;padding:16px 14px 44px}
+h1,h2,.total,.ptotal b,.stat3 b,.sug b{font-family:var(--serif);color:var(--plum)}
+.total{font-size:64px;font-weight:700;color:var(--accent)}
+.muted,.note,.foot,.empty,label,.lg,.stat3 span,.item .amt,.mrow .top span:last-child{color:var(--muted)}
+label{font-size:14px;font-weight:600}
+.note,.muted{font-size:14.5px}
+.cal .wd{font-size:13px;font-weight:700;color:var(--muted)}
+.wk .col{font-size:12px;color:var(--muted)}
+.stat3 span{font-size:13px}
+
+/* paper sections with a stationery inner border */
+section,section.block{position:relative;background:var(--paper);border:1px solid var(--tan);border-radius:6px;padding:18px 16px;box-shadow:0 2px 0 rgba(122,34,64,.06),0 12px 22px -14px rgba(74,36,71,.4)}
+section.block{margin-top:14px}
+section::after{content:"";position:absolute;inset:5px;border:1px solid rgba(138,106,114,.28);border-radius:3px;pointer-events:none}
+section h2{display:flex;align-items:center;gap:9px;margin:0 0 12px;font-size:22px;font-weight:600}
+section h2::before{content:"";flex:none;width:20px;height:20px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23D99AAE' stroke='%237A2240' stroke-width='1.2'%3E%3Cellipse cx='12' cy='6.5' rx='3.2' ry='4.8'/%3E%3Cellipse cx='12' cy='6.5' rx='3.2' ry='4.8' transform='rotate(72 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='3.2' ry='4.8' transform='rotate(144 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='3.2' ry='4.8' transform='rotate(216 12 12)'/%3E%3Cellipse cx='12' cy='6.5' rx='3.2' ry='4.8' transform='rotate(288 12 12)'/%3E%3C/g%3E%3Ccircle cx='12' cy='12' r='2.6' fill='%23A98497' stroke='%237A2240'/%3E%3C/svg%3E") center/contain no-repeat}
+.item,.mrow,.rrow,.prow,.row{border-color:var(--rule)}
+summary{color:var(--accent);font-weight:700}
+
+/* forms and buttons */
+input,select{background:var(--field);color:var(--ink);border:1.5px solid var(--edge);border-radius:6px}
+input::placeholder{color:var(--muted);opacity:1}
+input[type=checkbox]{accent-color:var(--accent)}
+input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--plum);outline-offset:2px}
+button{background:var(--accent);color:var(--accent-ink);border:2px solid var(--accent);border-radius:8px;font-weight:700;box-shadow:0 3px 0 #4D1228}
+button:active{transform:translateY(2px);box-shadow:0 1px 0 #4D1228}
+button.alt{background:var(--paper);color:var(--accent);border:2px solid var(--accent);box-shadow:0 3px 0 rgba(122,34,64,.25)}
+.del{border:0;box-shadow:none;color:var(--accent)}
+.res{background:var(--field);border:1.5px solid var(--edge);border-radius:6px}
+.plan,.alert{background:#F3DDE2;color:var(--plum);border-radius:6px;font-weight:600}
+.alert.bad{background:#FBE9EC;color:var(--over);border:1.5px solid var(--over)}
+.mnav b{font:600 19px var(--serif);color:var(--plum)}
+
+/* meters, bars and charts: dark sage for progress, deep red when over */
+.bar{height:12px;background:var(--track);border:1px solid #BCA67E}
+.fill,.mbar i,.wk .col i.hit{background:var(--sage)}
+.fill.over,.mbar i.over{background:var(--over)}
+.mbar{background:var(--track)}
+.wk .col i{background:#9B6B80;box-shadow:none}
+.stat3 div{background:var(--field);border:1px solid var(--tan);border-radius:6px}
+.stat3 b{color:var(--accent)}
+
+/* navigation: index-card tabs with icons; selected = filled burgundy */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 16px;padding:0;overflow:visible}
+.tabs .tab{display:flex;flex-direction:column;align-items:center;gap:4px;width:auto;min-height:62px;margin:0;padding:10px 4px 9px;border:2px solid var(--accent);border-radius:8px 8px 4px 4px;background:var(--paper);color:var(--accent);font-size:13px;font-weight:700;box-shadow:0 2px 0 rgba(122,34,64,.2)}
+.tabs .tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);box-shadow:0 3px 0 #4D1228;transform:translateY(-1px)}
+.tabs .tab[aria-selected="true"]::after{content:"";width:20px;height:3px;border-radius:2px;background:var(--rose)}
+.ic{width:24px;height:24px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.days .tab{width:auto;padding:8px 14px;border:1.5px solid var(--edge);border-radius:6px;background:var(--paper);color:var(--ink);font-size:14px}
+.days .tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* period calendar: period = rose-red, fertile and ovulation = sage, social = plum dot */
+.cal button{border:1px solid var(--tan);border-radius:6px;box-shadow:none;font-weight:600}
+.cal button.pred{background:none;border:2px dashed var(--over);color:var(--over)}
+.cal button.on{background:var(--over);border-color:var(--over);color:var(--accent-ink)}
+.cal button.low{background:var(--track)}
+.cal button.fert{border:2px dotted var(--sage)}
+.cal button.ovu{background:var(--sage);border-color:var(--sage);color:var(--accent-ink)}
+.cal button.today{box-shadow:inset 0 0 0 2px var(--ink)}
+.cal .soc::after{background:var(--plum)} .cal .ovu.soc::after{background:var(--accent-ink)} .cal .pms::after{border-color:var(--muted)}
+.lg i{border-color:var(--tan)} .lg .on{background:var(--over);border-color:var(--over)} .lg .pred{border:2px dashed var(--over)}
+.lg .fert{border:2px dotted var(--sage)} .lg .ovu{background:var(--sage);border-color:var(--sage)} .lg .soc::after{background:var(--plum)} .lg .pms::after{border-color:var(--muted)}
+
+/* home: the diary page */
+.diary{position:relative;padding:18px 16px 18px;background:var(--paper);border:1px solid var(--tan);border-radius:6px 6px 16px 6px;box-shadow:0 2px 0 rgba(122,34,64,.06),0 16px 26px -16px rgba(74,36,71,.5)}
+.diary::before{content:"";position:absolute;inset:6px;border:1px solid rgba(138,106,114,.35);border-radius:3px;pointer-events:none}
+.d-top{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.brand{display:flex;align-items:center;gap:8px;font:italic 600 19px/1 var(--serif);color:var(--accent)}
+.brand svg{width:46px;height:46px}
+.stamp{position:relative;flex:none;width:58px;height:68px;transform:rotate(3deg);filter:drop-shadow(0 2px 2px rgba(74,36,71,.28))}
+.stamp svg{position:absolute;inset:0;width:100%;height:100%}
+.stamp b{position:absolute;left:0;right:0;top:15px;text-align:center;font:700 26px/1 var(--serif);color:var(--accent)}
+.stamp i{position:absolute;left:0;right:0;bottom:13px;text-align:center;font:700 11px/1 "Instrument Sans",system-ui,sans-serif;letter-spacing:.12em;color:var(--plum)}
+.diary .date{position:relative;margin:12px 0 2px;font-size:14px;font-weight:700;color:var(--muted)}
+.diary h1{position:relative;max-width:calc(100% - 64px);margin:0;font-size:34px;line-height:1.08;font-weight:700;letter-spacing:-.01em}
+.d-note{position:relative;margin:10px 0 6px;font:600 22px/27px var(--hand);color:var(--plum);background:repeating-linear-gradient(transparent 0 26px,rgba(122,34,64,.2) 26px 27px)}
+.quote{position:relative;margin:20px 4px 6px;padding:16px 14px 12px;background:#F6E4E8;border:1px solid #D7AEB9;border-radius:3px;transform:rotate(-.6deg);box-shadow:0 8px 12px -9px rgba(74,36,71,.5)}
+.quote blockquote{margin:0;font:italic 500 19px/1.4 var(--serif);color:var(--plum)}
+.quote figcaption{margin-top:8px;text-align:right;font-size:13px;font-weight:700;color:var(--muted)}
+.tape{position:absolute;top:-11px;left:22px;width:76px;height:22px;transform:rotate(-5deg);background:repeating-linear-gradient(135deg,rgba(157,176,154,.9) 0 6px,rgba(157,176,154,.65) 6px 12px);box-shadow:0 1px 2px rgba(74,36,71,.22)}
+.quote .tape{left:auto;right:26px;transform:rotate(4deg);background:repeating-linear-gradient(135deg,rgba(203,191,224,.95) 0 6px,rgba(203,191,224,.7) 6px 12px)}
+.stk{position:absolute;pointer-events:none}
+.s-butterfly{right:76px;top:70px;width:50px;height:50px;transform:rotate(18deg)}
+.s-flower{right:-6px;bottom:-24px;width:62px;height:62px;transform:rotate(14deg)}
+.s-bow{left:-8px;bottom:-12px;width:48px;height:36px;transform:rotate(-12deg)}
+
+/* home: today cards (calories, movement, gentle reminder) and the step ticket */
+.d-label{display:flex;align-items:center;gap:10px;margin:26px 2px 12px;font:italic 600 19px var(--serif);color:var(--plum)}
+.d-label::after{content:"";flex:1;height:4px;border-top:1px solid var(--edge);border-bottom:1px solid var(--edge);opacity:.55}
+.mini-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-bottom:14px}
+.mini{position:relative;padding:15px 13px 13px;background:var(--paper);border:1px solid var(--tan);border-radius:4px;box-shadow:0 10px 14px -11px rgba(74,36,71,.55)}
+.mini:nth-child(1){transform:rotate(-.8deg)} .mini:nth-child(2){transform:rotate(.7deg)}
+.mini::before{content:"";position:absolute;top:-9px;left:50%;width:54px;height:17px;margin-left:-27px;transform:rotate(-3deg);background:rgba(217,154,174,.8)}
+.mini:nth-child(2)::before{transform:rotate(3deg);background:rgba(203,191,224,.9)}
+.mini .ic{position:absolute;right:11px;top:14px;width:26px;height:26px;color:var(--accent)}
+.mini-label{display:block;padding-right:32px;font-size:13px;font-weight:700;color:var(--muted)}
+.mini strong{display:block;margin-top:2px;font:700 40px/1.05 var(--serif);color:var(--accent);font-variant-numeric:lining-nums tabular-nums}
+.mini small{display:block;font-size:13px;font-weight:500;color:var(--muted)}
+.meter{display:block;height:9px;margin-top:9px;background:var(--track);border:1px solid #BCA67E;border-radius:99px;overflow:hidden}
+.meter i{display:block;width:0;height:100%;background:var(--sage);border-radius:99px;transition:width .4s}
+.meter i.over{background:var(--over)}
+.care-mini{grid-column:1/-1;background:#EEF1E8;border-color:#B5C2AE;transform:none}
+.care-mini::before{background:rgba(157,176,154,.85);transform:rotate(-2deg)}
+.care-mini .ic{color:var(--sage)}
+.care-mini strong{margin-top:3px;font-size:22px;line-height:1.2;color:var(--sage)}
+.care-mini small{font-size:14px;color:var(--ink)}
+#stepTicker{position:relative;top:auto;display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:10px 14px;background:var(--paper);border:2px dashed var(--sage);border-radius:6px}
+#stepTicker .ic{width:28px;height:28px;color:var(--sage)}
+#stepTicker div{display:flex;flex-direction:column;line-height:1.2}
+#stepTicker small{font-size:12.5px;font-weight:700;color:var(--muted)}
+#stepTicker b{font:700 22px/1.15 var(--serif);color:var(--sage);font-variant-numeric:lining-nums tabular-nums}
+.foot{padding:12px}
+@media (max-width:380px){.diary h1{font-size:29px}.mini strong{font-size:34px}.brand{font-size:17px}.s-butterfly{right:70px}}
+@media (prefers-reduced-motion:reduce){.meter i{transition:none}}
