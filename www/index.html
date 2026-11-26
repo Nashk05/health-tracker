@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Health Tracker</title>
+<title>Bloom Wellness</title>
   <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#c65b83">
+<meta name="theme-color" content="#7A2240">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com...">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..600&family=Instrument+Sans:wght@400..700&display=swap"><meta name="color-scheme" content="light"><link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
 :root {
   --bg: #eef3f5; --field: #ffffff; --ink: #13222c; --muted: #5b6e7a; --rule: #d3dde3;
@@ -17,18 +17,7 @@
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #101a22; --field: #16242e; --ink: #e6eef2; --muted: #8fa3b0; --rule: #26353f;
-    --track: #1d2c36; --accent: #6ccfc0; --accent-ink: #07171a; --over: #ff8a7a;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #101a22; --field: #16242e; --ink: #e6eef2; --muted: #8fa3b0; --rule: #26353f;
-  --track: #1d2c36; --accent: #6ccfc0; --accent-ink: #07171a; --over: #ff8a7a;
-  color-scheme: dark;
-}
+
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-padding-top: env(safe-area-inset-top, 0px); }
 body {
@@ -153,119 +142,48 @@ summary { margin-top: 20px; font-weight: 600; cursor: pointer; }
 .foot { text-align: center; margin-top: 26px; }
 @media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
 
-/* Floral wellness theme */
-:root {
- --bg:#fff5f7; --field:#ffffff; --ink:#493943; --muted:#8a7180; --rule:#f0d9e2;
- --track:#f7e2ea; --accent:#c65b83; --accent-ink:#ffffff; --over:#b42318;
- color-scheme:light;
-}
-body { background:linear-gradient(160deg,#fff5f7 0%,#fbf4ff 48%,#f5fbf4 100%); }
-.wrap { padding-top:18px; }
-h1 { color:#a84470; }
-section { background:rgba(255,255,255,.82); border:1px solid #f1dce5; border-radius:20px; padding:18px; box-shadow:0 8px 26px rgba(167,93,125,.07); }
-.block { background:transparent; border:0; padding:18px 0 6px; box-shadow:none; }
-.tab { border-radius:999px; }
-.tab[aria-selected="true"] { background:#c65b83; border-color:#c65b83; }
-button { border-radius:14px; }
-input,select { border-radius:13px; border-color:#efd8e2; }
-.floral-mark { display:flex; align-items:center; gap:10px; margin-bottom:12px; color:#a84470; font-size:13px; font-weight:600; letter-spacing:.04em; }
-.floral-mark span { font-size:22px; }
-#stepTicker { position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 -2px 14px; padding:10px 14px; border:1px solid #f0d5e0; border-radius:16px; background:rgba(255,255,255,.94); box-shadow:0 5px 18px rgba(167,93,125,.10); backdrop-filter:blur(12px); }
-#stepTicker b { color:#a84470; font-variant-numeric:tabular-nums; }
-#stepTicker small { color:#8a7180; }
-
-
-/* Bloom Wellness scrapbook redesign */
-:root { --bg:#fff7fa; --field:#fffdfd; --ink:#51404c; --muted:#967f8e; --rule:#f2dce7; --track:#f8e5ed; --accent:#c65b88; --accent-ink:#fff; --over:#b44b68; color-scheme:light; }
-body { background:radial-gradient(circle at 8% 7%,rgba(255,214,229,.72),transparent 25%),radial-gradient(circle at 94% 22%,rgba(229,218,255,.65),transparent 24%),linear-gradient(160deg,#fff7fa 0%,#fbf7ff 52%,#f5fbf5 100%); }
-.wrap { max-width:560px; padding:18px 16px 46px; }
-.welcome-hero { position:relative; overflow:hidden; padding:19px 20px 16px; border:1px solid #f1d5e2; border-radius:28px; background:linear-gradient(135deg,#fff 0%,#fff0f5 58%,#f2edff 100%); box-shadow:0 14px 34px rgba(174,104,139,.12); }
-.welcome-hero::before,.welcome-hero::after { content:""; position:absolute; border-radius:50%; pointer-events:none; }
-.welcome-hero::before { width:150px;height:150px;right:-48px;top:55px;background:rgba(255,255,255,.42); }
-.welcome-hero::after { width:90px;height:90px;right:72px;bottom:-58px;background:rgba(255,255,255,.48); }
-.hero-top { display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1; }
-.floral-mark { margin:0;color:#a64d78;font-size:12px;letter-spacing:.13em; }
-.floral-mark span { font-size:24px; }
-.hero-sparkle { color:#c58aae;font-size:25px; }
-.hero-copy { position:relative;z-index:1;max-width:82%;padding-top:23px; }
-.eyebrow { margin:0 0 7px;color:#b07898;font-size:10px;font-weight:700;letter-spacing:.16em; }
-.welcome-hero h1 { color:#914b70;font-size:34px;line-height:1.08;letter-spacing:-.035em; }
-.hero-sub { margin:9px 0 10px;color:#846d7b;font-size:14px;line-height:1.45; }
-.welcome-hero .date { margin:0;color:#a18596;font-size:12px; }
-.hero-stickers { position:absolute;right:12px;top:82px;width:120px;height:145px;z-index:1; }
-.sticker { position:absolute;display:grid;place-items:center;filter:drop-shadow(0 5px 5px rgba(130,83,113,.13)); }
-.sticker.flower { right:14px;top:0;font-size:47px;transform:rotate(12deg); }
-.sticker.butterfly { right:70px;top:52px;font-size:28px;transform:rotate(-17deg); }
-.sticker.bow { right:4px;top:88px;font-size:34px;transform:rotate(12deg); }
-.sticker.sparkle { right:83px;top:111px;font-size:20px; }
-.hero-note { position:relative;z-index:1;display:flex;align-items:center;gap:9px;margin-top:20px;padding:10px 12px;border:1px dashed #e9bfd1;border-radius:15px;background:rgba(255,255,255,.62);color:#946d82;font-size:12px; }
-.hero-note span:first-child { font-size:18px; }
-.dashboard-label { display:flex;justify-content:space-between;align-items:center;margin:21px 3px 10px;color:#a47a91;font-size:10px;font-weight:700;letter-spacing:.15em; }
-.mini-cards { display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:13px; }
-.mini-card { position:relative;min-height:112px;overflow:hidden;padding:13px 14px;border:1px solid #f0dce6;border-radius:20px;background:rgba(255,255,255,.84);box-shadow:0 7px 20px rgba(160,112,139,.07); }
-.mini-card:first-child { background:linear-gradient(145deg,#fff 0%,#fff0f4 100%); }
-.mini-card:nth-child(2) { background:linear-gradient(145deg,#fff 0%,#f0f4ff 100%); }
-.mini-card:nth-child(3) { grid-column:1/-1;min-height:78px;background:linear-gradient(110deg,#fff 0%,#f3f8ee 100%); }
-.mini-label { display:block;color:#987b8c;font-size:11px;font-weight:600; }
-.mini-card strong { display:block;margin-top:4px;color:#8f4c70;font-family:Fraunces,Georgia,serif;font-size:27px;line-height:1.15; }
-.mini-card small { display:block;color:#a18a99;font-size:10px; }
-.mini-sticker { position:absolute;right:12px;top:10px;font-size:25px;filter:drop-shadow(0 3px 3px rgba(140,90,120,.12)); }
-.care-mini strong { font-family:inherit;font-size:17px; }
-#stepTicker { position:relative;top:auto;display:flex;align-items:center;justify-content:space-between;margin:0 0 16px;padding:11px 15px;border:1px solid #dce9d9;border-radius:17px;background:linear-gradient(100deg,#f5faef,#fff);box-shadow:0 6px 18px rgba(110,147,102,.08);backdrop-filter:none; }
-#stepTicker small { color:#819579;letter-spacing:.04em;font-size:10px; }
-#stepTicker b { color:#65875f;font-size:15px; }
-.ticker-flower { font-size:24px; }
-section { background:rgba(255,255,255,.91);border:1px solid #f0dce6;border-radius:23px;padding:17px;box-shadow:0 8px 24px rgba(164,111,139,.075); }
-section.block { margin-top:13px;padding:17px;border:1px solid #f0dce6;border-radius:23px;background:rgba(255,255,255,.78);box-shadow:0 7px 20px rgba(164,111,139,.055); }
-section h2 { color:#965778;font-family:Fraunces,Georgia,serif;font-size:19px; }
-.block h2::before { content:"✿  ";color:#d38aaa;font-family:system-ui;font-size:15px; }
-.total { color:#a34f79;font-size:64px; }
-.bar { height:10px;background:#f7e6ed;border-radius:99px; }
-.fill { background:linear-gradient(90deg,#e68eae,#b69be8); }
-.tabs { gap:7px;padding:5px 1px 10px;margin-bottom:13px; }
-.tab { border-radius:999px;background:rgba(255,255,255,.78);border:1px solid #efd8e4;color:#987b8e;padding:9px 13px;font-size:13px; }
-.tab[aria-selected="true"] { background:linear-gradient(120deg,#d56f98,#b28bd3);border-color:transparent;color:#fff;box-shadow:0 5px 12px rgba(188,113,157,.2); }
-button { border-radius:15px;background:linear-gradient(120deg,#cf6f98,#b58ed2);box-shadow:0 5px 12px rgba(186,113,155,.13); }
-button.alt { background:#fff;color:#a35e82;border:1px solid #e9c7d8;box-shadow:none; }
-input,select { border-radius:14px;border-color:#ecd5e1;background:#fffdfd; }
-.item,.mrow,.rrow,.prow { border-color:#f2e4eb; }
-.plan { background:#f9eaf1;border-radius:14px;color:#8e5575; }
-.alert { background:#fff0f5;color:#995d7d;border:1px solid #f2d7e4; }
-.stat3 div { border-radius:15px;border-color:#f0dce6;background:#fffafd; }
-.cal button { border-radius:11px; }
-.res { border-radius:15px;border-color:#f0dce6; }
-.foot { padding:12px;color:#a28c9b; }
-@media (max-width:380px) { .hero-copy{max-width:78%;}.welcome-hero h1{font-size:29px}.hero-stickers{right:2px;transform:scale(.88);transform-origin:top right}.mini-card{padding:12px}.mini-card strong{font-size:24px} }
-
 </style>
+<link rel="stylesheet" href="bloom-vintage.css">
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-logo" viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" fill="#FFF6E6" stroke="#7A2240" stroke-width="3"/><circle cx="100" cy="100" r="80" fill="none" stroke="#7A2240" stroke-width="1.2" stroke-dasharray="1 5.2" stroke-linecap="round"/><ellipse cx="159.2" cy="78.5" rx="12" ry="5.5" transform="rotate(70.0 159.2 78.5)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="163.0" cy="98.2" rx="12" ry="5.5" transform="rotate(88.3 163.0 98.2)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="160.4" cy="118.1" rx="12" ry="5.5" transform="rotate(106.7 160.4 118.1)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="151.6" cy="136.1" rx="12" ry="5.5" transform="rotate(125.0 151.6 136.1)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="137.6" cy="150.5" rx="12" ry="5.5" transform="rotate(143.3 137.6 150.5)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="119.8" cy="159.8" rx="12" ry="5.5" transform="rotate(161.7 119.8 159.8)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="100.0" cy="163.0" rx="12" ry="5.5" transform="rotate(180.0 100.0 163.0)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="80.2" cy="159.8" rx="12" ry="5.5" transform="rotate(198.3 80.2 159.8)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="62.4" cy="150.5" rx="12" ry="5.5" transform="rotate(216.7 62.4 150.5)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="48.4" cy="136.1" rx="12" ry="5.5" transform="rotate(235.0 48.4 136.1)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="39.6" cy="118.1" rx="12" ry="5.5" transform="rotate(253.3 39.6 118.1)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="37.0" cy="98.2" rx="12" ry="5.5" transform="rotate(271.7 37.0 98.2)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="40.8" cy="78.5" rx="12" ry="5.5" transform="rotate(290.0 40.8 78.5)" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(0 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(45 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(90 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(135 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(180 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(225 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(270 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="75" rx="14.5" ry="26" transform="rotate(315 100 100)" fill="#D99AAE" stroke="#7A2240" stroke-width="2"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(22.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(67.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(112.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(157.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(202.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(247.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(292.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><ellipse cx="100" cy="83" rx="10" ry="18" transform="rotate(337.5 100 100)" fill="#F0C9D4" stroke="#7A2240" stroke-width="1.5"/><circle cx="100" cy="100" r="9" fill="#A98497" stroke="#7A2240" stroke-width="2"/><circle cx="100" cy="100" r="3" fill="#7A2240"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><path d="M12 8c-1.8-1.6-5.6-1.3-6.6 2-1 3.3.9 8.3 4 9.6.9.4 1.6 0 2.6 0s1.7.4 2.6 0c3.1-1.3 5-6.3 4-9.6-1-3.3-4.8-3.6-6.6-2z"/><path d="M12 8c0-2.1.9-3.7 3-4.6"/></symbol>
+<symbol id="i-diet" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2"/><path d="M9 4.5h6V7H9zM8.5 12h7M8.5 16h5"/></symbol>
+<symbol id="i-per" viewBox="0 0 24 24"><path d="M12 3.2c3.6 4.2 6 7.2 6 10.3a6 6 0 0 1-12 0c0-3.1 2.4-6.1 6-10.3z"/></symbol>
+<symbol id="i-steps" viewBox="0 0 24 24"><ellipse cx="8" cy="6.6" rx="3" ry="3.2"/><ellipse cx="8" cy="14" rx="2" ry="1.8"/><ellipse cx="16" cy="13.1" rx="3" ry="3.2"/><ellipse cx="16" cy="20.5" rx="2" ry="1.8"/></symbol>
+<symbol id="i-rem" viewBox="0 0 24 24"><path d="M6 16.5v-5.2a6 6 0 0 1 12 0v5.2l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+<symbol id="i-bak" viewBox="0 0 24 24"><path d="M12 4v10.5M7.8 10.5 12 14.7l4.2-4.2M5 19.5h14"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></symbol>
+<symbol id="i-butterfly" viewBox="0 0 64 64"><g stroke="#4A2447" stroke-width="1.6" stroke-linejoin="round"><path d="M32 30C22 6 3 8 6 25c1.5 8 15 11 26 7z" fill="#CBBFE0"/><path d="M32 30C42 6 61 8 58 25c-1.5 8-15 11-26 7z" fill="#CBBFE0"/><path d="M32 34C21 36 10 40 14 50c4 9 14 3 18-12z" fill="#D99AAE"/><path d="M32 34C43 36 54 40 50 50c-4 9-14 3-18-12z" fill="#D99AAE"/><ellipse cx="32" cy="34" rx="2.2" ry="11" fill="#664456"/></g><path d="M31 24c-3-7-7-9-9-9M33 24c3-7 7-9 9-9" fill="none" stroke="#4A2447" stroke-width="1.4" stroke-linecap="round"/><circle cx="17" cy="19" r="3" fill="#FFFAF0"/><circle cx="47" cy="19" r="3" fill="#FFFAF0"/></symbol>
+<symbol id="i-bow" viewBox="0 0 64 48"><g stroke="#7A2240" stroke-width="1.8" stroke-linejoin="round" fill="#D99AAE"><path d="M32 24C20 5 2 8 4 24c2 17 18 18 28 0z"/><path d="M32 24C44 5 62 8 60 24c-2 17-18 18-28 0z"/><path d="M30 30c-3 6-6 10-11 15l8-1 5-12z" fill="#C86B84"/><path d="M34 30c3 6 6 10 11 15l-8-1-5-12z" fill="#C86B84"/><rect x="26.5" y="17" width="11" height="14" rx="4" fill="#C86B84"/></g></symbol>
+<symbol id="i-sprig" viewBox="0 0 64 64"><path d="M32 62C30 48 34 38 32 27" fill="none" stroke="#3D5B47" stroke-width="2.2" stroke-linecap="round"/><path d="M32 51C21 49 15 43 13 36c11 0 17 6 19 15z" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6" stroke-linejoin="round"/><path d="M32 42c10-2 16-8 18-15-10 0-16 6-18 15z" fill="#9DB09A" stroke="#3D5B47" stroke-width="1.6" stroke-linejoin="round"/><g fill="#D99AAE" stroke="#7A2240" stroke-width="1.4"><ellipse cx="32" cy="11.5" rx="5.5" ry="9" transform="rotate(0 32 21)"/><ellipse cx="32" cy="11.5" rx="5.5" ry="9" transform="rotate(72 32 21)"/><ellipse cx="32" cy="11.5" rx="5.5" ry="9" transform="rotate(144 32 21)"/><ellipse cx="32" cy="11.5" rx="5.5" ry="9" transform="rotate(216 32 21)"/><ellipse cx="32" cy="11.5" rx="5.5" ry="9" transform="rotate(288 32 21)"/></g><circle cx="32" cy="21" r="4.6" fill="#A98497" stroke="#7A2240" stroke-width="1.4"/></symbol>
+</defs></svg>
 <div class="wrap">
-  <header class="welcome-hero">
-    <div class="hero-top"><div class="floral-mark"><span>🌸</span> BLOOM WELLNESS</div><span class="hero-sparkle" aria-hidden="true">✦</span></div>
-    <div class="hero-copy">
-      <p class="eyebrow">A LITTLE MOMENT FOR YOU</p>
-      <h1 id="greeting">Hello, sunshine!</h1>
-      <p class="hero-sub">Take a breath, take it gently. You're growing at your own pace. 🌷</p>
-      <p class="date" id="date"></p>
-    </div>
-    <div class="hero-stickers" aria-hidden="true"><span class="sticker flower">🌼</span><span class="sticker butterfly">🦋</span><span class="sticker bow">🎀</span><span class="sticker sparkle">✨</span></div>
-    <div class="hero-note"><span>💗</span><span>Small steps still count. Be proud of yourself today.</span></div>
-  </header>
-  <div class="dashboard-label"><span>YOUR LITTLE CHECK-IN</span><span>🌱</span></div>
-  <div class="mini-cards">
-    <article class="mini-card calorie-mini"><span class="mini-sticker">🍓</span><span class="mini-label">Calories today</span><strong id="dashCalories">0</strong><small>kcal logged</small></article>
-    <article class="mini-card steps-mini"><span class="mini-sticker">👟</span><span class="mini-label">Movement</span><strong id="dashSteps">0</strong><small>steps today</small></article>
-    <article class="mini-card care-mini"><span class="mini-sticker">🫧</span><span class="mini-label">A gentle reminder</span><strong>Drink water</strong><small>and give yourself a little love</small></article>
-  </div>
-  <div id="stepTicker"><div><small>🌿 YOUR DAILY STEPS</small><br><b id="tickerSteps">0 steps</b></div><span class="ticker-flower">🌸</span></div>
+  <header class="diary">
+<span class="tape" aria-hidden="true"></span>
+<div class="d-top"><div class="brand"><svg aria-hidden="true"><use href="#i-logo"/></svg><span>Bloom Wellness</span></div>
+<div class="stamp" aria-hidden="true"><svg viewBox="0 0 58 68" aria-hidden="true"><rect x="3" y="3" width="52" height="62" fill="#F6E1E4"/><rect x="3" y="3" width="52" height="62" fill="none" stroke="#FFFAF0" stroke-width="5" stroke-dasharray="0 7" stroke-linecap="round"/><rect x="8.5" y="8.5" width="41" height="51" fill="none" stroke="#7A2240" stroke-width="1.2"/></svg><b id="stampDay">1</b><i id="stampMon">JAN</i></div></div>
+<p class="date" id="date"></p>
+<h1 id="greeting">Good morning, lovely</h1>
+<p class="d-note" id="diaryNote">Dear diary, today I will move gently and eat something kind.</p>
+<figure class="quote"><span class="tape" aria-hidden="true"></span><blockquote id="quoteText">“Small steps still count. Be proud of today.”</blockquote><figcaption id="quoteBy">— a note to self</figcaption></figure>
+<svg class="stk s-butterfly" aria-hidden="true"><use href="#i-butterfly"/></svg><svg class="stk s-flower" aria-hidden="true"><use href="#i-sprig"/></svg><svg class="stk s-bow" aria-hidden="true"><use href="#i-bow"/></svg>
+</header>
+<div class="d-label"><span>Today in your diary</span></div>
+<div class="mini-cards">
+<article class="mini calorie-mini"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg><span class="mini-label">Calories today</span><strong id="dashCalories">0</strong><small id="calGoalTxt">kcal logged</small><span class="meter" aria-hidden="true"><i id="calMeter"></i></span></article>
+<article class="mini steps-mini"><svg class="ic" aria-hidden="true"><use href="#i-steps"/></svg><span class="mini-label">Movement</span><strong id="dashSteps">0</strong><small id="stepGoalTxt">steps logged</small><span class="meter" aria-hidden="true"><i id="stepMeter"></i></span></article>
+<article class="mini care-mini"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg><span class="mini-label">A gentle reminder for today</span><strong id="careTitle">Drink a glass of water</strong><small id="careText">Hydration is a quiet kindness.</small></article>
+</div>
+<div id="stepTicker"><svg class="ic" aria-hidden="true"><use href="#i-steps"/></svg><div><small>Your daily steps</small><b id="tickerSteps">0 steps</b></div></div>
   <div class="tabs" role="tablist">
-    <button type="button" class="tab" id="tCal" role="tab" aria-selected="true">Calories</button>
-    <button type="button" class="tab" id="tDiet" role="tab" aria-selected="false">Diet chart</button>
-    <button type="button" class="tab" id="tPer" role="tab" aria-selected="false">Period</button>
-    <button type="button" class="tab" id="tSteps" role="tab" aria-selected="false">Steps</button>
-    <button type="button" class="tab" id="tRem" role="tab" aria-selected="false">Reminders</button>
-    <button type="button" class="tab" id="tBak" role="tab" aria-selected="false">Backup</button>
+    <button type="button" class="tab" id="tCal" role="tab" aria-selected="true"><svg class="ic" aria-hidden="true"><use href="#i-cal"/></svg><span>Calories</span></button>
+    <button type="button" class="tab" id="tDiet" role="tab" aria-selected="false"><svg class="ic" aria-hidden="true"><use href="#i-diet"/></svg><span>Diet chart</span></button>
+    <button type="button" class="tab" id="tPer" role="tab" aria-selected="false"><svg class="ic" aria-hidden="true"><use href="#i-per"/></svg><span>Period</span></button>
+    <button type="button" class="tab" id="tSteps" role="tab" aria-selected="false"><svg class="ic" aria-hidden="true"><use href="#i-steps"/></svg><span>Steps</span></button>
+    <button type="button" class="tab" id="tRem" role="tab" aria-selected="false"><svg class="ic" aria-hidden="true"><use href="#i-rem"/></svg><span>Reminders</span></button>
+    <button type="button" class="tab" id="tBak" role="tab" aria-selected="false"><svg class="ic" aria-hidden="true"><use href="#i-bak"/></svg><span>Backup</span></button>
   </div>
   <div id="tabCal">
 
@@ -410,7 +328,7 @@ input,select { border-radius:14px;border-color:#ecd5e1;background:#fffdfd; }
     <section class="block">
       <h2>Last 7 days</h2>
       <div class="wk" id="stWeek"></div>
-      <p class="note">Many people aim for 7,000 to 10,000 steps a day. Teal bars mean you reached your goal.</p>
+      <p class="note">Many people aim for 7,000 to 10,000 steps a day. Green bars mean you reached your goal.</p>
       <p class="note">In the Android app, steps sync from your phone’s step sensor when you open the app and every minute while it is open. You can also type your steps. Distance and calories are rough estimates.</p>
     </section>
   </div>
@@ -422,7 +340,7 @@ input,select { border-radius:14px;border-color:#ecd5e1;background:#fffdfd; }
       <button type="button" id="remSave">Save reminders</button>
       <button type="button" id="remTest" class="alt">Send a test reminder</button>
       <div class="note" id="remMsg"></div>
-      <p class="note">If reminders do not arrive on a Samsung phone, open Settings, Apps, Health Tracker, Battery and choose Unrestricted.</p>
+      <p class="note">If reminders do not arrive on a Samsung phone, open Settings, Apps, Bloom Wellness, Battery and choose Unrestricted.</p>
     </section>
   </div>
   <div id="tabBak" class="hidden">
@@ -504,7 +422,6 @@ function render() {
   const left = state.goal - total;
   const now = new Date(), hourNow = now.getHours();
   $("date").textContent = now.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
-  $("greeting").textContent = hourNow < 12 ? "Good morning, sunshine!" : hourNow < 17 ? "Hello, lovely!" : "Good evening, lovely!";
   $("dashCalories").textContent = total.toLocaleString();
   $("total").textContent = total.toLocaleString();
   $("status").textContent = "kcal eaten · " + (left >= 0 ? left.toLocaleString() + " left" : (-left).toLocaleString() + " over");
@@ -951,11 +868,11 @@ $("remSave").onclick = async () => {
   try {
     const LN = await remPerm();
     if (LN === null) { msg.textContent = "Saved. Reminders start working in the installed Android app."; return; }
-    if (!LN) { msg.textContent = "Notifications are blocked. Allow them for Health Tracker in your phone settings."; return; }
+    if (!LN) { msg.textContent = "Notifications are blocked. Allow them for Bloom Wellness in your phone settings."; return; }
     const old = await LN.getPending();
     if (old.notifications.length) await LN.cancel({ notifications: old.notifications.map(n => ({ id: n.id })) });
     const list = [], add = (id, title, body, hm) => { const [h, m] = hm.split(":").map(Number); list.push({ id, title, body, schedule: { on: { hour: h, minute: m }, allowWhileIdle: true } }); };
-    MEAL_REM.forEach(([m], i) => { if (state.rem[m].on) add(101 + i, m + " time", "Log what you eat in Health Tracker.", state.rem[m].time); });
+    MEAL_REM.forEach(([m], i) => { if (state.rem[m].on) add(101 + i, m + " time", "Log what you eat in Bloom Wellness.", state.rem[m].time); });
     const w = state.rem.water;
     if (w.on) {
       const [fh, fm] = w.from.split(":").map(Number), [th] = w.to.split(":").map(Number);
@@ -972,7 +889,7 @@ $("remTest").onclick = async () => {
     const LN = await remPerm();
     if (LN === null) { msg.textContent = "Test reminders only work in the installed Android app."; return; }
     if (!LN) { msg.textContent = "Notifications are blocked. Allow them in your phone settings."; return; }
-    await LN.schedule({ notifications: [{ id: 999, title: "Health Tracker", body: "Test reminder. It works!", schedule: { at: new Date(Date.now() + 5000), allowWhileIdle: true } }] });
+    await LN.schedule({ notifications: [{ id: 999, title: "Bloom Wellness", body: "Test reminder. It works!", schedule: { at: new Date(Date.now() + 5000), allowWhileIdle: true } }] });
     msg.textContent = "A test reminder will arrive in about 5 seconds. Lock your screen to see it.";
   } catch (e) { msg.textContent = "Could not send the test: " + ((e && e.message) || e); }
 };
@@ -996,7 +913,7 @@ async function syncSteps(manual) {
     if (manual) msg.textContent = typeof last === "number" ? "Steps synced." : "Counting started. Steps from now on are added automatically.";
   } catch (e) {
     const c = String((e && (e.message || e.code)) || e);
-    if (manual) msg.textContent = /permission/i.test(c) ? "Allow Physical activity for Health Tracker in your phone settings." : /timeout/i.test(c) ? "No reading yet. Walk a few steps and tap again." : /nosensor/i.test(c) ? "This phone has no step sensor." : "Could not read steps: " + c;
+    if (manual) msg.textContent = /permission/i.test(c) ? "Allow Physical activity for Bloom Wellness in your phone settings." : /timeout/i.test(c) ? "No reading yet. Walk a few steps and tap again." : /nosensor/i.test(c) ? "This phone has no step sensor." : "Could not read steps: " + c;
   } finally { syncing = false; }
 }
 $("stSync").onclick = () => syncSteps(true);
@@ -1016,7 +933,7 @@ $("bkOut").onclick = async () => {
   try {
     if (isApp() && FS && SH) {
       const r = await FS.writeFile({ path: name, data: json, directory: "CACHE", encoding: "utf8" });
-      await SH.share({ title: "Health Tracker backup", url: r.uri, dialogTitle: "Save your backup" });
+      await SH.share({ title: "Bloom Wellness backup", url: r.uri, dialogTitle: "Save your backup" });
     } else {
       const a = document.createElement("a");
       a.href = URL.createObjectURL(new Blob([json], { type: "application/json" }));
@@ -1040,12 +957,13 @@ $("bkIn").onchange = async () => {
     Object.assign(state, d);
     save();
     location.reload();
-  } catch (e) { $("bkMsg").textContent = "That file is not a Health Tracker backup."; $("bkIn").value = ""; }
+  } catch (e) { $("bkMsg").textContent = "That file is not a Bloom Wellness backup."; $("bkIn").value = ""; }
 };
 
 document.addEventListener("visibilitychange", render);
 render();
 renderSteps();
 </script>
+<script src="bloom-diary.js"></script>
 </body>
 </html>
